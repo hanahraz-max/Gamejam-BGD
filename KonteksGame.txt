@@ -1,0 +1,76 @@
+KONTEKS AI - PROYEK UNITY
+Tanggal: 2026-03-20
+
+1) RINGKASAN GAME
+- Genre: Top-down 2D Puzzle-Action endless.
+- Premis: Player terjebak di ruangan kantor dan harus menyelesaikan objective untuk membuka lift/exit.
+- Tekanan utama: Area aman menyempit dari semua sisi seiring waktu.
+- Replayability: Setiap run terasa berbeda lewat randomization.
+
+2) CORE GAMEPLAY LOOP
+1. Masuk ruangan.
+2. Objective/puzzle muncul.
+3. Selesaikan objective.
+4. Lift/exit terbuka.
+5. Keluar ruangan lalu lanjut ruangan berikutnya.
+
+3) MEKANIK MVP (PRIORITAS AWAL)
+- Lantai tile punya 3 status: Aman -> Retak -> Hancur.
+- Tile hancur: tidak bisa diinjak atau memberi damage/fall.
+- Objective selesai membuka exit.
+- Lose jika player terjebak/terjatuh.
+
+4) DAFTAR PUZZLE (IDE SAAT INI)
+- Puzzle 1: Ambil barang kantor sesuai daftar, pegang 1 barang saja, salah ambil = gagal.
+- Puzzle 2: Cari kartu akses, sambungkan komputer ke listrik, hack untuk data password, login lift.
+- Puzzle 3: Sambung kabel berwarna, jika kabel cross maka reset.
+- Puzzle 4: Pilih kalimat yang tidak sesuai topik (odd one out).
+- Puzzle 5: Ambil kertas berisi angka password, hancurkan di shredder, ingat kombinasi sampai lift.
+
+5) RANDOMIZATION (TARGET)
+- Posisi objective diacak tiap run.
+- Urutan puzzle diacak.
+- Pola tile yang retak awal diacak.
+- Modifier halusinasi acak (distorsi visual singkat, bisikan, blur ringan).
+
+6) BATASAN SCOPE (AGAR AMAN UNTUK PEMULA)
+- Fokus dulu 1 ruangan playable.
+- Fokus 2 puzzle dulu (disarankan Puzzle 1 dan Puzzle 3).
+- Jangan implement semua puzzle sekaligus.
+
+7) STATUS IMPLEMENTASI (ISI SESUAI KONDISI TERKINI)
+- Project setup: BELUM/ON PROGRESS/SELESAI
+- Movement player top-down: BELUM/ON PROGRESS/SELESAI
+- Sistem tile retak-hancur: BELUM/ON PROGRESS/SELESAI
+- Objective + exit: BELUM/ON PROGRESS/SELESAI
+- Puzzle 1: BELUM/ON PROGRESS/SELESAI
+- Puzzle 3: BELUM/ON PROGRESS/SELESAI
+- Randomization dasar: BELUM/ON PROGRESS/SELESAI
+- Halusinasi basic: BELUM/ON PROGRESS/SELESAI
+
+8) STRUKTUR SCRIPT (SARAN)
+- GameManager: state game, win/lose, restart run.
+- RoomPressureController: kontrol penyusutan area aman.
+- FloorTileController: transisi tile aman/retak/hancur.
+- PuzzleManager: aktifkan puzzle dan cek selesai.
+- ExitController: buka/tutup lift berdasarkan objective.
+- RunRandomizer: random spawn, urutan puzzle, pola retak.
+
+9) KEBUTUHAN ASET KANTOR (MINIMAL)
+- Kertas, komputer, kabel listrik, kartu akses, mug, pulpen, stapler, buku, paperclip, gunting, penghancur kertas.
+
+10) TEMPLATE PERTANYAAN KE AI (SAAT KAMU TANYA UNITY)
+Gunakan format ini biar jawabannya lebih tepat:
+- Tujuan: (contoh: bikin tile aman->retak->hancur)
+- Scene/Object terkait: (nama scene, gameObject, komponen)
+- Script yang sudah ada: (tempel kode atau nama script)
+- Error yang muncul: (copy paste exact error)
+- Hasil yang diinginkan: (contoh perilaku game)
+- Yang sudah dicoba: (langkah yang sudah kamu lakukan)
+
+11) RULE DISCUSSION DENGAN AI
+- Minta solusi langkah demi langkah, bukan teori panjang.
+- Minta versi paling sederhana dulu (beginner-friendly).
+- Setelah jadi, baru minta versi refactor/rapi.
+
+Dokumen ini dipakai sebagai konteks utama saat tanya-jawab implementasi Unity berikutnya.
